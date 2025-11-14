@@ -2,11 +2,8 @@
 import { GoogleGenAI } from "@google/genai";
 import { GeminiModel, GroundingChunk } from '../types';
 
-if (!process.env.API_KEY) {
-    console.warn("API_KEY environment variable not set. Using a placeholder. Please set your API key.");
-}
-
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || 'YOUR_API_KEY_HERE' });
+// The API key is automatically sourced from the environment.
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 interface GeminiResponse {
     text: string;
